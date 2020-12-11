@@ -12,6 +12,7 @@ public enum SourceCodeTokenType {
 	case plain
     case type
     case customType
+    case instanceVariable
 	case number
 	case string
 	case identifier
