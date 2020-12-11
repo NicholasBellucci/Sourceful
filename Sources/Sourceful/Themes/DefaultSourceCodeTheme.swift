@@ -39,7 +39,7 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
             return Color(red: 158/255, green: 241/255, blue: 221/255, alpha: 1.0)
 
         case .instanceVariable:
-            return return Color(red: 103/255, green: 183/255, blue: 164/255, alpha: 1.0)
+            return Color(red: 103/255, green: 183/255, blue: 164/255, alpha: 1.0)
 			
 		case .number:
 			return Color(red: 116/255, green: 109/255, blue: 176/255, alpha: 1.0)
