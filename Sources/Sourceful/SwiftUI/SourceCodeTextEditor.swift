@@ -68,7 +68,7 @@ public struct SourceCodeTextEditor: NSViewRepresentable {
     
     public func updateNSView(_ view: SyntaxTextView, context: Context) {
         context.coordinator.wrappedView.text = text
-        view.wrapperView.textView?.selectedRanges = context.coordinator.wrappedView.textView.selectedRanges
+        view.textView.selectedRanges = context.coordinator.wrappedView.textView.selectedRanges
     }
 }
 
