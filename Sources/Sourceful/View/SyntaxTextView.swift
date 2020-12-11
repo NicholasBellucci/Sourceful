@@ -51,6 +51,16 @@ open class SyntaxTextView: _View {
 
     var previousSelectedRange: NSRange?
 
+    var selectedRanges: [NSValue] = [] {
+        didSet {
+            guard selectedRanges.count > 0 else {
+                return
+            }
+
+            textView.selectedRanges = selectedRanges
+        }
+    }
+
     private var textViewSelectedRangeObserver: NSKeyValueObservation?
 
     let textView: InnerTextView
