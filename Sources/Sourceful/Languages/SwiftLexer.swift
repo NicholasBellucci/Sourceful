@@ -49,6 +49,8 @@ public class SwiftLexer: SourceCodeRegexLexer {
 		// Multi-line string literal
 		generators.append(regexGenerator("(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators], tokenType: .string))
 
+        generators.append(regexGenerator("(?<=\\b(?:var|let)\\s)(\\w+)", tokenType: .otherDeclaration))
+
 		// Editor placeholder
 		var editorPlaceholderPattern = "(<#)[^\"\\n]*"
 		editorPlaceholderPattern += "(#>)"
