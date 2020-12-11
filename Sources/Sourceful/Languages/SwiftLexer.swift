@@ -22,7 +22,8 @@ public class SwiftLexer: SourceCodeRegexLexer {
 		generators.append(regexGenerator("\\b(NS|UI)[A-Z][a-zA-Z]+\\b", tokenType: .identifier))
 		
 		// Functions
-		
+        generators.append(regexGenerator("(?<=\\b(struct|class|enum|typealias|)\\s)(\\w+)", tokenType: .type))
+
 		generators.append(regexGenerator("\\b(println|print)(?=\\()", tokenType: .identifier))
 		
 		generators.append(regexGenerator("(?<=(\\s|\\[|,|:))(\\d|\\.|_)+", tokenType: .number))
