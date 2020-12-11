@@ -34,6 +34,9 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
 
         case .type:
             return Color(red: 93/255, green: 216/255, blue: 255/255, alpha: 1.0)
+
+        case .customType:
+            return Color(red: 158/255, green: 241/255, blue: 221/255, alpha: 1.0)
 			
 		case .number:
 			return Color(red: 116/255, green: 109/255, blue: 176/255, alpha: 1.0)
