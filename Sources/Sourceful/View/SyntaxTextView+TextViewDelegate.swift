@@ -156,11 +156,10 @@ extension SyntaxTextView {
 			}
 			
 			didUpdateText()
-			
+            self.delegate?.didChangeText(self)
 		}
 		
 		func didUpdateText() {
-			
 			self.invalidateCachedTokens()
 			self.textView.invalidateCachedParagraphs()
 			
@@ -171,8 +170,6 @@ extension SyntaxTextView {
 			}
 			
 			wrapperView.setNeedsDisplay(wrapperView.bounds)
-			self.delegate?.didChangeText(self)
-			
 		}
 		
 		open func textViewDidChangeSelection(_ notification: Notification) {
