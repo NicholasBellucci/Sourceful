@@ -87,10 +87,7 @@ extension SourceCodeTextEditor {
         }
         
         public func didChangeText(_ syntaxTextView: SyntaxTextView) {
-            DispatchQueue.main.async {
-                self.parent.text = syntaxTextView.text
-            }
-
+            parent.text = syntaxTextView.text
             selectedRanges = syntaxTextView.contentTextView.selectedRanges
             parent.custom.didChange?(syntaxTextView.text)
         }
