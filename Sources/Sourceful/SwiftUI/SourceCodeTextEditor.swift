@@ -68,15 +68,15 @@ public struct SourceCodeTextEditor: NSViewRepresentable {
     
     public func updateNSView(_ view: SyntaxTextView, context: Context) {
         context.coordinator.wrappedView.text = text
-        view.textView.selectedRanges = context.coordinator.wrappedView.textView.selectedRanges
+        view.selectedRanges = context.coordinator.selectedRanges
     }
 }
 
 extension SourceCodeTextEditor {
-    
     public class Coordinator: SyntaxTextViewDelegate {
         let parent: SourceCodeTextEditor
         var wrappedView: SyntaxTextView!
+        var selectedRanges: [NSValue] = []
         
         init(_ parent: SourceCodeTextEditor) {
             self.parent = parent
@@ -90,8 +90,8 @@ extension SourceCodeTextEditor {
             DispatchQueue.main.async {
                 self.parent.text = syntaxTextView.text
             }
-            
-            // allow the client to decide on thread
+
+            selectedRanges = syntaxTextView.contentTextView.selectedRanges
             parent.custom.didChange?(syntaxTextView.text)
         }
         
