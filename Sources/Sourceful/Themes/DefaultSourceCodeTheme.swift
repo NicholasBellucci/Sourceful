@@ -36,10 +36,10 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
 			return Color(red: 116/255, green: 109/255, blue: 176/255, alpha: 1.0)
 			
 		case .string:
-			return Color(red: 208/255, green: 168/255, blue: 255/255, alpha: 1.0)
+			return Color(red: 252/255, green: 106/255, blue: 93/255, alpha: 1.0)
 			
 		case .identifier:
-			return Color(red: 20/255, green: 156/255, blue: 146/255, alpha: 1.0)
+			return Color(red: 208/255, green: 168/255, blue: 255/255, alpha: 1.0)
 			
 		case .keyword:
 			return Color(red: 252/255, green: 95/255, blue: 163/255, alpha: 1.0)
