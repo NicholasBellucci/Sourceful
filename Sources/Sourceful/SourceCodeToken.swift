@@ -10,6 +10,7 @@ import Foundation
 
 public enum SourceCodeTokenType {
 	case plain
+    case type
 	case number
 	case string
 	case identifier
